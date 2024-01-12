@@ -1,20 +1,17 @@
 function getKeysAndValues(obj) {
-    let finalArr =[]
 
-    const keys = Object.keys(obj).sort();
+    let [finalArr, keysArr , valuesArr] =[[] ,[] ,[]]
+     
+    for(i in obj){
+        
+        keysArr.push(i);
+        valuesArr.push(obj[i])
+        
+     }
 
-    
-    const values = keys.map(key => obj[key]);
+    finalArr =[keysArr , valuesArr]
+   return finalArr
 
-    return { keys, values };
 }
 
-// Example usage:
-const myObject = {
-   "user_1" : "Asif",
-   "user_2" : "Sarfaraaz",
-   "user_3" : "Sohael",
-   "user_4" : "Asif",
-};
-
-const result = getKeysAndValues(myObject);
+getKeysAndValues({name: "asif" , roll_no : 1155606})
